@@ -3,14 +3,6 @@
     {
       "source": "/.well-known/:path*",
       "destination": "https://poho.fly.dev/.well-known/:path*"
-    },
-    {
-      "source": "/post/:path*",
-      "destination": "https://poho.fly.dev/post/:path*"
-    },
-    {
-      "source": "/user/:path*",
-      "destination": "https://poho.fly.dev/user/:path*"
     }
   ]
 }
