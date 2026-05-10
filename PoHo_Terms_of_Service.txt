@@ -1,0 +1,296 @@
+PoHo
+
+poho.world
+
+
+
+Terms of Service
+
+Please read carefully before using PoHo
+
+Version 1.0  |  Effective Date: 1 January 2025
+
+contact@poho.world  |  poho.world
+
+
+
+IMPORTANT — PLEASE READ CAREFULLY.
+
+These Terms and Conditions constitute a legally binding agreement between you and PoHo.
+
+By accessing or using the PoHo platform in any way, you confirm that you have read,
+
+understood, and agree to be bound by these Terms. If you do not agree, you must not use the Services.
+
+
+
+1.  Acceptance of Terms
+
+PoHo is a social discovery platform designed to help people turn online interaction into real-life experiences. The platform operates through a mobile application (the "App"), a website at poho.world, and all related services, features, content, and tools (collectively, the "Services").
+
+By downloading, installing, registering for, accessing, or using any part of the Services, you ("User") signify that you have read, understood, and agree to be bound by these Terms and Conditions ("Terms"), our Privacy Policy, our Community Guidelines, and any additional policies incorporated by reference, all of which form part of a single binding agreement between you and PoHo.
+
+2.  Definitions
+
+"Account" — a registered user account created on the PoHo platform.
+
+"App" — the PoHo mobile application available on iOS and Android.
+
+"Community Guidelines" — the rules and standards of conduct governing user behaviour on the platform.
+
+"Content" — any text, images, photographs, video, audio, location data, messages, or other material of any kind.
+
+"Event" — any activity, gathering, meetup, outing, or experience created or listed on the platform.
+
+"Services" — the App, the website at poho.world, and all associated features, content, tools, and functionality.
+
+"Subscription" — any paid tier of access to enhanced features of the Services.
+
+"User Content" — any Content that you upload, post, transmit, or otherwise make available through the Services.
+
+
+
+3.  Description of Services
+
+PoHo is built around action: helping users discover events and activities, find companions to attend them with, and participate in real-world experiences. The Services are structured around three core areas:
+
+3.1  Events and Activities
+
+Users may discover, create, join, and organise social activities including group dinners, sports sessions, casual meetups, cultural outings, and other shared experiences. Events are typically designed as small, manageable group experiences to reduce social barriers to participation.
+
+3.2  Social and Dating
+
+PoHo supports social connection and dating through an activity-first model. Rather than focusing on profile browsing or extended messaging, the platform encourages connection through shared experiences. Users may be matched with others attending the same event or express interest in attending an event with a specific user.
+
+3.3  Travel and Exploration
+
+The platform supports users who wish to explore new cities or locations, whether as visitors or locals. Users may find travel companions, connect with others in the same location, and discover activities relevant to their interests.
+
+3.4  Communication Features
+
+The Services include real-time text messaging via WebSocket technology and audio/video calling via Agora Real-Time Communication (RTC) infrastructure, integrated with native device operating system call interfaces (Apple CallKit on iOS and CallKeep on Android).
+
+4.  Eligibility
+
+4.1  Age Requirements
+
+You must be at least 13 years of age to register for an account. If you are under 18, you may only use the Services with the verifiable consent and ongoing supervision of a parent or legal guardian. Certain features — including features related to dating and meeting new people — are restricted to users aged 18 or older.
+
+4.2  Legal Capacity
+
+By using the Services, you represent and warrant that you have full legal capacity to enter into a binding agreement; have not previously been banned from the Services; and will provide accurate, truthful information during registration.
+
+4.3  Jurisdiction
+
+The Services are operated from the United Kingdom. Users who access the Services from outside the UK do so at their own initiative and are solely responsible for compliance with their local laws.
+
+5.  User Accounts and Registration
+
+5.1  Account Creation
+
+You may register directly with an email address and password, or via Apple Sign-In, Google Sign-In, or Facebook (Meta) Login. You agree to provide accurate, current, and complete information and to update it promptly if it changes.
+
+5.2  Account Security and Responsibility
+
+You are solely responsible for maintaining the confidentiality and security of your account credentials. You agree to use a strong, unique password; not share credentials with others; log out on shared devices; and notify PoHo immediately at contact@poho.world of any unauthorised access.
+
+5.3  Account Suspension and Termination by PoHo
+
+PoHo reserves the right to suspend, restrict, or permanently terminate any account at any time where we reasonably believe you have breached these Terms, engaged in harmful or illegal conduct, or where continued access poses a risk to other users or the platform.
+
+5.4  Account Deletion by User
+
+You may delete your account at any time through the App settings. See our Data Deletion Instructions for full details of what is deleted and what may be retained.
+
+6.  User Content and Intellectual Property
+
+6.1  Your Ownership of User Content
+
+You retain full ownership of the intellectual property rights in your User Content. PoHo does not claim ownership over the content you create. However, by submitting User Content to the Services, you grant PoHo a worldwide, non-exclusive, royalty-free, sublicensable, and transferable licence to use, copy, reproduce, process, adapt, modify, publish, transmit, display, and distribute your User Content in connection with the operation and promotion of the Services. You may revoke this licence by deleting the relevant content or your account.
+
+6.2  Your Responsibilities
+
+You are solely responsible for your User Content and represent and warrant that: you own all rights to the content or have obtained all necessary permissions; your User Content does not infringe any third-party rights; and your User Content complies with all applicable laws and these Terms.
+
+6.3  Content Moderation
+
+PoHo reserves the right to monitor, review, flag, moderate, edit, refuse, or remove any User Content at any time. We may use automated systems, AI tools, and human reviewers to assist in this process.
+
+6.4  PoHo Intellectual Property
+
+All intellectual property rights in the Services — including the App, website, source code, designs, logos, and trade marks — are owned by or licensed to PoHo. You may not copy, modify, reverse engineer, or otherwise exploit PoHo's intellectual property.
+
+7.  Prohibited Conduct and Acceptable Use
+
+The following categories of conduct are strictly prohibited:
+
+7.1  Illegal Activity
+
+Using the Services for any unlawful purpose;
+
+Creating, distributing, or sharing child sexual abuse material (CSAM) — any such instance will be reported to the NCA, IWF, and/or relevant law enforcement immediately;
+
+Engaging in fraud, identity theft, or impersonation.
+
+
+
+7.2  Harassment, Abuse, and Harmful Conduct
+
+Harassing, stalking, threatening, bullying, or intimidating any person;
+
+Publishing or facilitating non-consensual intimate imagery ("revenge porn");
+
+Engaging in hate speech or content that promotes discrimination;
+
+Encouraging or facilitating self-harm or suicide.
+
+
+
+7.3  Platform Integrity
+
+Scraping or harvesting data through automated means without written consent;
+
+Interfering with or disrupting the technical infrastructure of the Services;
+
+Creating fake accounts or misrepresenting your identity.
+
+
+
+7.4  Privacy Violations
+
+Recording or sharing conversations with other users without their knowledge and consent;
+
+Using the platform to track the location of another person without their consent.
+
+
+
+8.  Community Guidelines
+
+All users are expected to interact with respect, honesty, and good faith. The core principles are:
+
+Authenticity — represent yourself honestly and engage in good faith;
+
+Respect and Dignity — all users have the right to use the Services without abuse or discriminatory treatment;
+
+Safety and Consent — respect the personal autonomy and consent of others at all times;
+
+Event Integrity — events must be genuine; fake or misleading events may result in immediate account termination;
+
+Trust and Verification — do not misuse verification systems to appear trustworthy while engaging in harmful conduct.
+
+
+
+9.  Safety and Real-World Meetings
+
+Because PoHo facilitates real-world interactions, we take user safety exceptionally seriously.
+
+9.1  User Responsibility for Personal Safety
+
+PoHo cannot guarantee the safety of in-person meetings. You should: meet for the first time in a public place; inform a trusted person of your plans; not share sensitive personal or financial information with users you do not know well; and trust your instincts.
+
+9.2  No Endorsement of Other Users
+
+The presence of a user on PoHo does not constitute an endorsement of that person's identity, intentions, or character. Profile verification confirms only that a user has completed the relevant verification step.
+
+9.3  Reporting
+
+You are strongly encouraged to report any user whose behaviour makes you feel unsafe. Reports are reviewed by our moderation team. In cases involving potential criminal activity, we will cooperate with law enforcement.
+
+9.4  Background Checks
+
+PoHo does not conduct background checks on its users. All users should exercise their own judgement when meeting other users in person.
+
+10.  Subscriptions, Payments, and Refunds
+
+10.1  Freemium Model
+
+Core features are available free of charge. Premium features are available through a paid Subscription, with pricing and included features displayed clearly within the App.
+
+10.2  Automatic Renewal
+
+Subscriptions renew automatically unless cancelled before the renewal date. Cancellation takes effect at the end of the current billing period.
+
+10.3  Refund Policy
+
+Subscription fees are generally non-refundable except where required by applicable law. Complaints regarding charges should be sent to contact@poho.world within 14 days. We review all complaints in accordance with the Consumer Rights Act 2015 (UK).
+
+11.  Device Permissions and Hardware Access
+
+PoHo requests permission to access certain hardware capabilities of your device. All permissions require your explicit grant via your device's operating system and may be revoked at any time through your device settings.
+
+Camera and Microphone — required for profile photos, video content, voice messages, and audio/video calls;
+
+Location Services — required for nearby events and the "trips" feature. We recommend granting access only "While Using the App";
+
+Photo Library — required to upload existing images and videos;
+
+Native Call Integration — integrates with Apple CallKit (iOS) and CallKeep (Android) to present calls on the lock screen;
+
+Push Notifications — used for call alerts, message notifications, and event updates via FCM and APNs.
+
+
+
+12.  Disclaimers of Warranties
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT WARRANTIES OF ANY KIND. POHO SPECIFICALLY DISCLAIMS ALL IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. PoHo does not warrant that the Services will be uninterrupted, error-free, or free of viruses or harmful components.
+
+13.  Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, POHO AND ITS DIRECTORS, EMPLOYEES, AGENTS, AND LICENSORS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR LOSS OF PROFITS, REVENUE, DATA, OR BUSINESS OPPORTUNITY.
+
+Nothing in these Terms limits PoHo's liability for death or personal injury caused by our negligence, fraud, or any other liability that cannot be limited by applicable law. Subject to the above, PoHo's total aggregate liability shall not exceed the greater of: (i) total fees paid to PoHo in the twelve months preceding the claim; or (ii) £100.
+
+14.  Indemnification
+
+You agree to indemnify and hold harmless PoHo and its officers, directors, employees, and contractors from and against any claims, damages, liabilities, and expenses (including legal fees) arising out of your use of the Services, your User Content, your breach of these Terms, or your violation of any applicable law or third-party rights.
+
+15.  Intellectual Property — DMCA and Takedowns
+
+If you believe that content on the platform infringes your copyright, please submit a notice to contact@poho.world containing: your contact details; a description of the infringed right; a description of the infringing content and its location; a good faith statement; and your physical or electronic signature. We will investigate and, where appropriate, remove infringing content promptly.
+
+16.  Governing Law and Dispute Resolution
+
+16.1  Governing Law
+
+These Terms shall be governed by and construed in accordance with the laws of England and Wales.
+
+16.2  Jurisdiction
+
+The courts of England and Wales shall have exclusive jurisdiction to settle any dispute arising out of or in connection with these Terms or the Services.
+
+16.3  Informal Resolution
+
+Before initiating formal proceedings, you agree to attempt to resolve any dispute informally by contacting us at contact@poho.world. We will endeavour to respond within 30 days. If the dispute is not resolved within 60 days, either party may pursue formal remedies.
+
+16.4  Consumer Rights
+
+Nothing in this Section affects your statutory rights as a consumer under the laws of England and Wales, including your rights under the Consumer Rights Act 2015.
+
+17.  Miscellaneous
+
+Entire Agreement — these Terms, together with the Privacy Policy and Community Guidelines, constitute the entire agreement between you and PoHo;
+
+Severability — if any provision is found invalid or unenforceable, the remaining provisions continue in full force;
+
+No Waiver — failure to enforce any right does not constitute a waiver;
+
+Assignment — you may not assign your rights without PoHo's prior written consent;
+
+Force Majeure — PoHo is not liable for delays caused by circumstances beyond its reasonable control;
+
+Language — the English language version of these Terms shall prevail in all cases.
+
+
+
+If you have any questions about these Terms, please contact us at:
+
+
+
+Legal Department  |  PoHo Mobile
+
+contact@poho.world  |  poho.world
+
+
+
+Terms and Conditions of Use  |  Version 1.0  |  Effective 1 January 2025  |  contact@poho.world
+

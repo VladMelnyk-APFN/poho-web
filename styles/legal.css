@@ -1,0 +1,129 @@
+.legal-page-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at top center, #1a1a2e 0%, #0a0a0c 100%);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.legal-container {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+  animation: fadeUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #5e5ce6, #b14bf4, #5e5ce6);
+  background-size: 200% 100%;
+  animation: gradientFlow 4s linear infinite;
+}
+
+.legal-header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(to right, #fff, #a5a5b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.legal-meta {
+  color: var(--text-secondary);
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.legal-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 48px;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.legal-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  color: #e5e5ea;
+}
+
+.legal-content p {
+  color: #d1d1d6;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+.legal-content ul {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.legal-content li {
+  color: #d1d1d6;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.legal-content a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.legal-content a:hover {
+  color: #7b7aff;
+  text-decoration: underline;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@media (max-width: 600px) {
+  .legal-container {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+  
+  .legal-title {
+    font-size: 28px;
+  }
+}

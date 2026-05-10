@@ -1,0 +1,372 @@
+
+
+PoHo
+
+poho.world
+
+
+
+Privacy Policy
+
+How PoHo collects, uses, and protects your data
+
+Version 1.0  |  Effective Date: 1 January 2025
+
+contact@poho.world  |  privacy@poho.world
+
+
+
+This Privacy Policy explains how PoHo collects, uses, stores, shares, and protects your
+
+personal data when you use our Services. Please read it carefully. Your use of the Services
+
+constitutes your acceptance of this policy. PoHo is committed to compliance with the UK
+
+General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+
+
+
+1.  Introduction and Who We Are
+
+PoHo Mobile ("PoHo", "we", "us", "our") is the data controller responsible for the personal data processed under this Privacy Policy. PoHo is a social discovery platform that helps people find events, activities, and companions for real-world experiences. Our Services include a mobile application (the "App"), a website at poho.world, and related features including real-time messaging, audio/video calling, location-based discovery, and event management.
+
+We are committed to protecting your privacy and handling your personal data with transparency, integrity, and care. This Privacy Policy is written in plain English and is intended to be clear and understandable. Questions? Contact our Data Protection Officer at privacy@poho.world.
+
+1.1  Scope of This Policy
+
+This Privacy Policy applies to all personal data we collect when you:
+
+Download, install, or register for the App;
+
+Browse or use any feature of the Services;
+
+Communicate with other users through the platform;
+
+Contact us directly, including through our support channels.
+
+
+
+This Policy does not apply to the practices of third-party services linked to or integrated with our Services. We strongly encourage you to review the privacy policies of any third-party services you use.
+
+1.2  Legal Framework
+
+PoHo processes personal data in compliance with the UK General Data Protection Regulation (UK GDPR), the Data Protection Act 2018, the Privacy and Electronic Communications Regulations 2003 (PECR), and all other applicable UK data protection legislation. Where we transfer personal data internationally, we take appropriate safeguards as described in Section 10 of this Policy.
+
+2.  Information We Collect
+
+We collect several categories of personal data depending on how you use the Services. We collect only the data that is necessary for the purposes described in this Policy.
+
+2.1  Information You Provide Directly
+
+Registration and Profile Data
+
+When you create an account, we collect: your name or display name; email address; date of birth; gender (optional); profile photograph; and a password (stored using Argon2 cryptographic hashing — we never store plaintext passwords). If you register via Apple, Google, or Meta/Facebook SSO, we receive your name, email address, and profile picture from that provider.
+
+Content You Create
+
+We collect all content you create and share on the platform: posts, comments, reactions, photographs, videos, audio messages, event listings, and any other content you upload or transmit through the Services.
+
+Messages
+
+We process the content of messages you send to other users through the platform's real-time messaging features. Messages are transmitted via our WebSocket infrastructure and may be retained in our database until deleted by the user.
+
+Event and Activity Data
+
+When you create or join an event, we collect the event details you provide, your RSVPs and attendance confirmations, and any content you add to the event.
+
+Support and Communications
+
+If you contact us for support or submit a complaint, we collect your name, contact details, and a description of the issue.
+
+2.2  Information Collected Automatically
+
+Device and Technical Data
+
+When you use the App, we automatically collect technical information including device model and identifiers, operating system version, app version and crash logs, network type and IP address, and FCM/APNs push notification tokens used to deliver notifications and route incoming calls to your device.
+
+Usage Data
+
+We collect information about how you interact with the Services — features accessed, time spent, actions taken, events viewed or joined, and other engagement metrics — used in aggregated and anonymised form to improve the Services.
+
+Location Data
+
+If you grant location permission, we collect real-time GPS data to power the "nearby events" feature, the "trips" feature, and other location-based functionality. We strongly recommend the "While Using the App" option. You can withdraw location permission at any time through your device settings.
+
+Camera and Microphone Data
+
+If you grant camera and microphone permissions, we access these only when you are actively using features that require them. We do not access your camera or microphone in the background.
+
+2.3  Information From Third Parties
+
+If you register via Apple Sign-In, Google Sign-In, or Meta (Facebook) Login, we receive account information from those providers. We also use Firebase and Google Cloud services for crash analytics, performance monitoring, and app usage telemetry.
+
+3.  How We Use Your Information
+
+We use the personal data we collect only for legitimate purposes and only to the extent necessary. The table below sets out the main purposes and legal bases under UK GDPR:
+
+
+
+Purpose
+
+Data Used
+
+Legal Basis (UK GDPR)
+
+Providing the Services and managing your account
+
+Profile data, usage data, device data
+
+Performance of a contract (Art. 6(1)(b))
+
+Enabling messaging and calls
+
+Message content, call metadata, device tokens
+
+Performance of a contract (Art. 6(1)(b))
+
+Location-based discovery (events, trips)
+
+GPS location data
+
+Consent (Art. 6(1)(a))
+
+Camera and microphone access for calling and content
+
+Camera data, audio data
+
+Consent (Art. 6(1)(a))
+
+Push notifications
+
+FCM/APNs tokens, notification preferences
+
+Consent (Art. 6(1)(a))
+
+Improving the Services through analytics
+
+Aggregated usage data, crash logs
+
+Legitimate interests (Art. 6(1)(f))
+
+Safety, security, and fraud prevention
+
+Account data, usage patterns, reports
+
+Legitimate interests (Art. 6(1)(f))
+
+Complying with legal obligations
+
+Any data relevant to the obligation
+
+Legal obligation (Art. 6(1)(c))
+
+Customer support and complaints
+
+Support communications, account data
+
+Performance of a contract (Art. 6(1)(b))
+
+
+
+4.  How We Share Your Information
+
+We do not sell your personal data to any third party, ever.
+
+
+
+We share your data only as described in this section and only where necessary to operate the Services or comply with legal obligations.
+
+4.1  Other Users
+
+Information you choose to make public — including your display name, profile photograph, bio, and event activity — will be visible to other users. You control the visibility of your profile information through your privacy settings.
+
+4.2  Technology and Infrastructure Partners
+
+We work with the following third-party technology providers who process personal data on our behalf, subject to binding data processing agreements:
+
+Agora (Agora.io) — real-time audio and video call routing
+
+Supabase — primary database (PostgreSQL) and object storage
+
+Google LLC / Firebase — Android push notifications, Google Sign-In, crash reporting
+
+Apple Inc. — iOS push notifications (APNs) and Apple Sign-In
+
+Meta Platforms, Inc. — Facebook Login authentication
+
+Redis — real-time WebSocket messaging infrastructure
+
+Resend — transactional email delivery
+
+Expo (EAS) — cloud builds, over-the-air updates, and push notification infrastructure
+
+
+
+4.3  Legal Compliance and Safety
+
+We may disclose your personal data to law enforcement or regulatory authorities where required by applicable law, court order, or government request, or to protect the safety of users or third parties.
+
+4.4  Business Transactions
+
+In the event of a merger, acquisition, or restructuring, your personal data may be transferred to a successor entity. We will notify you in advance and provide information about the new data controller's privacy practices.
+
+5.  Data Security
+
+We implement appropriate technical and organisational measures to protect your personal data. Key security measures include:
+
+Argon2 password hashing — resistant to brute-force and GPU-based attacks; we never store passwords in plaintext
+
+TLS 1.2+ encryption for all data in transit between the App and our servers
+
+JWT authentication with short expiry windows and token rotation
+
+Role-based database access controls and IP whitelisting
+
+Encrypted Agora RTP protocols for audio and video calls
+
+
+
+Access to personal data is restricted to personnel on a need-to-know basis. We will notify you and the ICO of any personal data breach within 72 hours where required.
+
+6.  Data Retention
+
+We retain personal data only for as long as necessary for the purposes described in this Policy.
+
+
+
+Category of Data
+
+Retention Period
+
+Account and profile data
+
+Until account deletion, then up to 30 days in backup systems
+
+User content (posts, photos, videos)
+
+Until deleted by you; cached copies up to 30 days post-deletion
+
+Messages
+
+Until deleted by you or both parties to the conversation
+
+Location data
+
+Not persistently stored beyond the active session unless tied to an event
+
+Call metadata (duration, participants)
+
+Up to 12 months from date of call
+
+Crash and error logs
+
+Up to 6 months from date of event
+
+Support communications
+
+Up to 3 years from close of interaction
+
+Legal compliance records
+
+As required by applicable law, typically 6 years
+
+
+
+7.  Your Rights Under UK GDPR
+
+Under the UK GDPR and Data Protection Act 2018, you have the following rights. To exercise any of them, contact us at privacy@poho.world. We will respond within one calendar month.
+
+7.1  Right of Access
+
+You may request a copy of the personal data we hold about you (a Subject Access Request). We will provide this information free of charge within one month.
+
+7.2  Right to Rectification
+
+You may correct inaccurate or incomplete personal data. Most profile information can be updated directly within the App.
+
+7.3  Right to Erasure (Right to Be Forgotten)
+
+You may request deletion of your personal data where it is no longer necessary, consent is withdrawn, or it has been unlawfully processed. You can delete your account through the App settings.
+
+7.4  Right to Restriction of Processing
+
+You may request that we restrict processing in certain circumstances, such as while a dispute about accuracy is being resolved.
+
+7.5  Right to Data Portability
+
+Where processing is by automated means on the basis of consent or contract, you may receive your data in a structured, machine-readable format and request transfer to another controller.
+
+7.6  Right to Object
+
+You may object to processing based on legitimate interests. We will stop unless we can demonstrate compelling grounds that override your interests.
+
+7.7  Right to Withdraw Consent
+
+You may withdraw consent for location data, camera/microphone access, and push notifications at any time through your device settings.
+
+7.8  Right to Lodge a Complaint
+
+If you believe we have not handled your data lawfully, you may lodge a complaint with the Information Commissioner's Office (ICO):
+
+
+
+Information Commissioner's Office
+
+Wycliffe House, Water Lane, Wilmslow, Cheshire SK9 5AF
+
+ico.org.uk  |  0303 123 1113
+
+
+
+We would welcome the opportunity to address your concerns directly first.
+
+Please contact privacy@poho.world in the first instance.
+
+
+
+8.  Cookies and Tracking
+
+The PoHo mobile application does not use traditional browser cookies. We use Firebase Analytics within the App — which uses a randomly generated instance identifier, not a persistent device ID — to collect anonymised usage data. You may opt out through the App's privacy settings.
+
+Our website at poho.world uses strictly necessary cookies and, with your consent, analytics cookies via Google Analytics. A cookie consent banner is presented on your first visit.
+
+9.  Children's Privacy
+
+The Services are not directed at children under the age of 13. We do not knowingly collect personal data from children under 13. Features related to dating and meeting new people are restricted to users aged 18 or over. If you believe your child under 13 has provided us with personal data, please contact privacy@poho.world immediately.
+
+10.  International Data Transfers
+
+When we transfer your personal data outside the UK or EEA, we rely on UK Standard Contractual Clauses, adequacy decisions, or other approved transfer mechanisms. Key international processors include Agora (USA), Google LLC (USA), Apple Inc. (USA), Meta Platforms (USA), and Supabase (USA). Contact privacy@poho.world for further information about safeguards.
+
+11.  Changes to This Privacy Policy
+
+We may update this Privacy Policy to reflect changes in our Services or applicable law. When we make material changes, we will update the "Last Updated" date, notify you via in-app notification or email, and where required by UK GDPR, seek fresh consent.
+
+12.  Contact Us
+
+
+
+Contact
+
+Details
+
+Data Protection Officer
+
+privacy@poho.world
+
+General Enquiries
+
+contact@poho.world
+
+Website
+
+poho.world
+
+Mailing Address
+
+PoHo Mobile, Legal & Compliance Department
+
+
+
+Privacy Policy  |  Version 1.0  |  Effective 1 January 2025  |  contact@poho.world
+

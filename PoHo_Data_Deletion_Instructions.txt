@@ -1,0 +1,284 @@
+PoHo
+
+poho.world
+
+
+
+Data Deletion Instructions
+
+How to delete your account and personal data
+
+Version 1.0  |  Effective Date: 1 January 2025
+
+contact@poho.world  |  privacy@poho.world
+
+
+
+YOUR RIGHT TO DELETION
+
+Under the UK General Data Protection Regulation (UK GDPR), the Data Protection Act 2018,
+
+and Apple App Store and Google Play Store requirements, you have the right to request
+
+deletion of your account and personal data at any time. This document explains exactly
+
+how to do that, what will be deleted, and what may be retained.
+
+
+
+1.  How to Delete Your Account In the App
+
+Account deletion is available directly within the PoHo mobile application, without needing to contact us.
+
+
+
+IN-APP DELETION — STEP BY STEP
+
+
+
+Step 1:  Open the PoHo App and log in to your account.
+
+Step 2:  Tap your profile icon in the bottom navigation bar.
+
+Step 3:  Tap the Settings icon (gear icon) in the top right corner.
+
+Step 4:  Scroll down to the "Account" section.
+
+Step 5:  Tap "Delete Account".
+
+Step 6:  Read the confirmation screen carefully. You will be shown a summary of what will be deleted.
+
+Step 7:  Enter your password (or authenticate via Face ID / Touch ID) to confirm your identity.
+
+Step 8:  Tap "Permanently Delete My Account".
+
+Step 9:  You will receive a confirmation email within a few minutes confirming deletion has been initiated.
+
+
+
+⚠️  Account deletion is irreversible. Once confirmed, your account cannot be recovered.
+
+If you think you may want to return to PoHo in the future, you may instead choose to deactivate your account temporarily, which hides your profile without deleting your data.
+
+2.  How to Request Deletion Without the App
+
+If you no longer have access to the App, your account, or your registered device, you can request data deletion through our web portal or by email.
+
+2.1  Web-Based Deletion Request
+
+
+
+DATA DELETION WEB PORTAL
+
+
+
+URL:  https://poho.world/delete-my-data
+
+
+
+You will be asked to provide:
+
+  • Your registered email address
+
+  • Confirmation that you are the account holder
+
+  • A verification code sent to your email address
+
+
+
+Once your identity is verified, your deletion request will be processed within 30 days.
+
+
+
+2.2  Email Request
+
+
+
+Field
+
+Details
+
+Email address
+
+privacy@poho.world
+
+Subject line
+
+Account Deletion Request
+
+Include in your email
+
+Your full name, registered email address, and a statement that you wish to permanently delete your account and all associated personal data
+
+Response time
+
+Acknowledgement within 5 business days; deletion completed within 30 days
+
+
+
+3.  What Gets Deleted
+
+When your account is deleted — whether through the App, the web portal, or email request — the following data is permanently deleted from our systems:
+
+
+
+Category
+
+What Is Deleted
+
+Timeframe
+
+Profile data
+
+Display name, bio, profile photograph, date of birth, gender
+
+Immediately upon confirmation
+
+Authentication data
+
+Email address and hashed password (or SSO link)
+
+Within 7 days
+
+Posts and content
+
+All posts, photographs, videos, and other content you created
+
+Within 7 days
+
+Messages
+
+All messages sent and received in private and group chats
+
+Within 7 days
+
+Event data
+
+Events you created and your RSVP and attendance records
+
+Within 7 days
+
+Location history
+
+Any stored location data associated with your account
+
+Within 7 days
+
+Connections
+
+Follower/following lists, blocked user lists, and matches
+
+Immediately upon confirmation
+
+Backup copies
+
+Residual copies in encrypted backup systems
+
+Within 30 days of deletion request
+
+
+
+4.  What May Be Retained
+
+UK law requires us to retain certain data for specific periods even after account deletion:
+
+
+
+Category
+
+Retention Period
+
+Legal Basis
+
+Records of legal disputes or complaints
+
+Up to 6 years
+
+Limitation Act 1980 (UK)
+
+Financial transaction records (if applicable)
+
+Up to 6 years
+
+HMRC requirements
+
+Safety-related records (reports filed by or against you)
+
+Up to 3 years
+
+Child protection and safeguarding obligations
+
+Anonymised aggregated analytics
+
+Indefinitely (not linked to you)
+
+Not personal data under UK GDPR
+
+Law enforcement holds
+
+As required by court order or legal obligation
+
+Legal obligation (Art. 6(1)(c) UK GDPR)
+
+
+
+Retained data is securely stored, access-controlled, and used only for the specific purpose for which it is retained. It is not used to rebuild your profile or re-associate with any future account.
+
+5.  Third-Party Data
+
+Deleting your PoHo account removes your data from PoHo's systems. However, if you registered via a third-party provider, your data held by those providers is not deleted by PoHo. You must request deletion from them separately:
+
+Apple: Settings > [Your Name] > Sign-In & Security > Apps Using Apple ID
+
+Google: myaccount.google.com > Security > Third-party apps with account access
+
+Meta / Facebook: facebook.com/settings > Security and Login > Apps and Websites
+
+
+
+If audio or video calls were routed through Agora's infrastructure, Agora may retain limited call metadata in accordance with their own retention policies. Agora's Privacy Policy is available at agora.io/en/privacy-policy/.
+
+6.  Deleting Specific Data Without Deleting Your Account
+
+You do not need to delete your entire account to remove specific content. You can:
+
+Delete individual posts by tapping the three-dot menu on any post and selecting "Delete";
+
+Delete messages by pressing and holding a message and selecting "Delete";
+
+Remove your profile photograph by going to Profile > Edit Profile > Remove Photo;
+
+Remove location data by disabling location permission in your device settings (Settings > PoHo > Location > Never);
+
+Request a copy of all your data before deletion by emailing privacy@poho.world with the subject "Data Export Request".
+
+
+
+7.  Contact
+
+
+
+Contact
+
+Details
+
+Email
+
+privacy@poho.world
+
+Web portal
+
+poho.world/delete-my-data
+
+Response time
+
+Within 5 business days for acknowledgement; 30 days for completion
+
+Supervisory authority
+
+Information Commissioner's Office — ico.org.uk — 0303 123 1113
+
+
+
+Data Deletion Instructions  |  Version 1.0  |  Effective 1 January 2025  |  contact@poho.world
+
