@@ -1,14 +1,15 @@
 /* landing.css - Premium Styles for PoHo Homepage */
 
 :root {
-  --poho-bg: #09090b;
+  --poho-bg: #000000;
   --poho-surface: rgba(255, 255, 255, 0.03);
   --poho-surface-hover: rgba(255, 255, 255, 0.06);
-  --poho-border: rgba(255, 255, 255, 0.08);
-  --poho-accent: #5e5ce6;
-  --poho-accent-glow: rgba(94, 92, 230, 0.4);
+  --poho-border: #450A0A;
+  --poho-accent: #EF4444;
+  --poho-accent-glow: rgba(239, 68, 68, 0.4);
   --poho-text: #f8f8f8;
-  --poho-text-muted: #a1a1aa;
+  --poho-text-muted: #9CA3AF;
+  --poho-btn-action: #DC2626;
 }
 
 body {
@@ -77,8 +78,8 @@ body {
   display: inline-block;
   padding: 6px 16px;
   border-radius: 100px;
-  background: rgba(94, 92, 230, 0.15);
-  color: #8b8aff;
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--poho-accent);
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 24px;
@@ -117,8 +118,8 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #fff;
-  color: #000;
+  background: var(--poho-btn-action);
+  color: #fff;
   padding: 14px 24px;
   border-radius: 16px;
   text-decoration: none;
@@ -238,7 +239,7 @@ body {
 .feature-icon {
   width: 56px;
   height: 56px;
-  background: rgba(94, 92, 230, 0.1);
+  background: rgba(239, 68, 68, 0.1);
   border-radius: 16px;
   display: flex;
   align-items: center;

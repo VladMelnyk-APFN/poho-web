@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-top: #0a0a0c;
-  --bg-bottom: #1a1a24;
-  --accent: #5e5ce6;
+  --bg-top: #000000;
+  --bg-bottom: #000000;
+  --accent: #EF4444;
+  --btn-action: #DC2626;
+  --border-theme: #450A0A;
   --text-main: #f2f2f7;
-  --text-secondary: #aeaeb2;
+  --text-secondary: #9CA3AF;
 }
 
 * {
@@ -77,8 +79,8 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--text-main);
-  color: #000;
+  background-color: var(--btn-action);
+  color: #fff;
 }
 
 .btn-primary:hover {

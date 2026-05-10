@@ -1,7 +1,7 @@
 .legal-page-wrapper {
   min-height: 100vh;
   width: 100vw;
-  background: radial-gradient(circle at top center, #1a1a2e 0%, #0a0a0c 100%);
+  background: #000000;
   color: var(--text-main);
   font-family: 'Inter', sans-serif;
   padding: 60px 20px;
@@ -33,7 +33,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #5e5ce6, #b14bf4, #5e5ce6);
+  background: linear-gradient(90deg, #EF4444, #DC2626, #EF4444);
   background-size: 200% 100%;
   animation: gradientFlow 4s linear infinite;
 }
