@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PoHo — Go Together</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #0A0A0A;
+    --paper:   #F5F2EC;
+    --orange:  #FF4E1A;
+    --orange2: #FF7A45;
+    --mid:     #6B6660;
+    --rule:    #E0DCD4;
+    --white:   #FFFFFF;
+    --dark:    #141210;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─────────────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(245,242,236,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--orange); }
+
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.875rem; font-weight: 500;
+    color: var(--mid);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+  }
+  .btn-primary:hover { background: #E03A0A; transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--white); }
+
+  .btn-white {
+    background: var(--white);
+    color: var(--ink);
+  }
+  .btn-white:hover { background: var(--paper); transform: translateY(-1px); }
+
+  /* ─── HERO ────────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 3rem 5rem;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(255,78,26,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(255,78,26,0.1);
+    color: var(--orange);
+    font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+  }
+
+  .hero-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero-headline em {
+    font-style: normal;
+    color: var(--orange);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--mid);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+
+  .hero-stat-row {
+    display: flex; gap: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  .hero-stat strong {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .hero-stat span {
+    font-size: 0.82rem;
+    color: var(--mid);
+    font-weight: 400;
+    margin-top: 0.3rem;
+    display: block;
+    max-width: 100px;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .phone-frame {
+    width: 280px;
+    height: 560px;
+    background: var(--dark);
+    border-radius: 40px;
+    border: 3px solid rgba(255,255,255,0.12);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 60px 120px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05);
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(-2deg); }
+  }
+
+  .phone-notch {
+    width: 90px; height: 26px;
+    background: var(--dark);
+    border-radius: 0 0 16px 16px;
+    margin: 0 auto 0;
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    z-index: 2;
+    border: 3px solid rgba(255,255,255,0.08);
+    border-top: none;
+  }
+
+  .phone-screen {
+    position: absolute; inset: 4px;
+    background: linear-gradient(160deg, #1a1410 0%, #0d1a14 100%);
+    border-radius: 36px;
+    padding: 48px 16px 16px;
+    overflow: hidden;
+  }
+
+  .app-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 20px;
+  }
+  .app-logo-sm {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.2rem;
+    color: var(--white);
+  }
+  .app-logo-sm span { color: var(--orange); }
+
+  .app-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  .card-title { font-size: 0.8rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .card-meta { font-size: 0.7rem; color: rgba(255,255,255,0.5); }
+  .card-badge {
+    display: inline-block;
+    background: rgba(255,78,26,0.25);
+    color: var(--orange2);
+    font-size: 0.65rem; font-weight: 600;
+    padding: 2px 8px; border-radius: 999px;
+    margin-top: 8px;
+  }
+
+  .avatars { display: flex; margin-top: 8px; }
+  .av {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--orange); border: 2px solid rgba(0,0,0,0.4);
+    margin-left: -6px; font-size: 0.6rem;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700;
+  }
+  .av:first-child { margin-left: 0; }
+
+  .phone-blob {
+    position: absolute;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(255,78,26,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulse-blob 3s ease-in-out infinite;
+  }
+  @keyframes pulse-blob {
+    0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%,-50%) scale(1.1); opacity: 0.7; }
+  }
+
+  /* ─── PROBLEM STRIP ───────────────────────────────────────── */
+  .problem-strip {
+    background: var(--dark);
+    color: var(--white);
+    padding: 6rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .problem-strip::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(255,78,26,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .problem-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+  }
+
+  .problem-label {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 1.25rem;
+  }
+  .problem-headline {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .problem-headline em { font-style: normal; color: var(--orange); }
+
+  .problem-body {
+    font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.6);
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-quote {
+    border-left: 3px solid var(--orange);
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    margin-top: 1.5rem;
+  }
+  .problem-quote cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+    margin-top: 0.5rem;
+  }
+
+  .problem-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: rgba(255,255,255,0.08);
+    border-radius: 20px; overflow: hidden;
+  }
+  .pstat {
+    background: rgba(255,255,255,0.04);
+    padding: 2rem;
+  }
+  .pstat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem; font-weight: 800;
+    color: var(--orange); line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.5rem;
+  }
+  .pstat-label {
+    font-size: 0.85rem; line-height: 1.5;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ─── HOW IT WORKS ────────────────────────────────────────── */
+  .how {
+    padding: 7rem 3rem;
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 1rem;
+  }
+  .section-headline {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 540px;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 1rem; color: var(--mid); line-height: 1.7;
+    max-width: 500px; margin-bottom: 4rem;
+  }
+
+  .verticals {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+    background: var(--rule);
+    border-radius: 24px; overflow: hidden;
+  }
+
+  .vertical {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: background 0.25s;
+  }
+  .vertical:hover { background: #FEFCF9; }
+
+  .v-icon {
+    width: 48px; height: 48px;
+    background: rgba(255,78,26,0.1);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  .v-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(255,78,26,0.4);
+    margin-bottom: 0.5rem;
+  }
+  .v-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem; font-weight: 700;
+    letter-spacing: -0.02em; color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .v-body {
+    font-size: 0.9rem; color: var(--mid);
+    line-height: 1.65;
+  }
+  .v-list {
+    list-style: none;
+    margin-top: 1.25rem;
+  }
+  .v-list li {
+    font-size: 0.85rem; color: var(--mid);
+    padding: 0.4rem 0;
+    border-top: 1px solid var(--rule);
+    display: flex; gap: 0.6rem;
+  }
+  .v-list li::before {
+    content: '→'; color: var(--orange); font-weight: 700; flex-shrink: 0;
+  }
+
+  /* ─── RESEARCH CALLOUT ────────────────────────────────────── */
+  .research {
+    background: var(--ink); color: var(--white);
+    padding: 6rem 3rem;
+  }
+  .research-inner { max-width: 1100px; margin: 0 auto; }
+
+  .research-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+  .research-label {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 0.75rem;
+  }
+  .research-headline {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
+    color: var(--white);
+  }
+  .research-source {
+    font-size: 0.8rem; color: rgba(255,255,255,0.3);
+    text-align: right;
+  }
+
+  .findings {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: rgba(255,255,255,0.08);
+    border-radius: 20px; overflow: hidden;
+  }
+  .finding {
+    background: rgba(255,255,255,0.03);
+    padding: 2rem;
+  }
+  .finding-q {
+    font-size: 0.78rem; color: rgba(255,255,255,0.3);
+    text-transform: uppercase; letter-spacing: 0.07em;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .finding-quote {
+    font-size: 0.92rem; line-height: 1.65;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+  }
+  .finding-quote cite {
+    display: block; font-style: normal;
+    font-size: 0.75rem; color: rgba(255,255,255,0.3);
+    margin-top: 1rem;
+  }
+
+  /* ─── FEATURES ────────────────────────────────────────────── */
+  .features {
+    padding: 7rem 3rem;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .features-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px;
+    background: var(--rule); border-radius: 24px; overflow: hidden;
+    margin-top: 4rem;
+  }
+  .feat {
+    background: var(--white); padding: 2rem 1.75rem;
+    transition: background 0.2s;
+  }
+  .feat:hover { background: #FEFCF9; }
+  .feat-icon {
+    font-size: 1.6rem; margin-bottom: 1.25rem;
+  }
+  .feat-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+  .feat-body {
+    font-size: 0.85rem; color: var(--mid); line-height: 1.6;
+  }
+
+  /* ─── SAFETY ─────────────────────────────────────────────── */
+  .safety {
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    padding: 6rem 3rem;
+  }
+  .safety-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .safety-commitments {
+    list-style: none; margin-top: 2rem;
+  }
+  .safety-commitments li {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.1rem 0; border-bottom: 1px solid var(--rule);
+    font-size: 0.9rem; line-height: 1.55; color: var(--mid);
+  }
+  .safety-commitments li:first-child { border-top: 1px solid var(--rule); }
+  .sc-icon {
+    width: 28px; height: 28px; flex-shrink: 0;
+    background: rgba(255,78,26,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; margin-top: 2px;
+  }
+  .safety-big {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 800; line-height: 1.05; letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .safety-big em { font-style: normal; color: var(--orange); }
+  .safety-big-sub {
+    font-size: 1rem; color: var(--mid); line-height: 1.65;
+    margin-top: 1.25rem; max-width: 420px;
+  }
+
+  /* ─── CTA ─────────────────────────────────────────────────── */
+  .cta-section {
+    background: var(--dark);
+    padding: 8rem 3rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,78,26,0.12) 0%, transparent 70%);
+  }
+  .cta-label {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 1.5rem;
+  }
+  .cta-headline {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 800; line-height: 0.95; letter-spacing: -0.04em;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .cta-headline em { font-style: normal; color: var(--orange); }
+  .cta-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.5);
+    line-height: 1.65; max-width: 480px; margin: 0 auto 2.5rem;
+  }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-store {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    background: rgba(255,255,255,0.08);
+    border: 1.5px solid rgba(255,255,255,0.15);
+    color: var(--white); padding: 0.85rem 1.75rem;
+    border-radius: 14px; text-decoration: none;
+    transition: all 0.2s; font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .btn-store:hover { background: rgba(255,255,255,0.14); transform: translateY(-2px); }
+  .btn-store-icon { font-size: 1.4rem; }
+  .btn-store-text { text-align: left; }
+  .btn-store-sub { font-size: 0.7rem; color: rgba(255,255,255,0.5); display: block; line-height: 1; margin-bottom: 2px; }
+  .btn-store-main { font-size: 0.95rem; font-weight: 600; display: block; }
+
+  /* ─── FOOTER ─────────────────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2.5rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.2rem; color: var(--white); text-decoration: none;
+  }
+  .footer-logo span { color: var(--orange); }
+
+  .footer-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .footer-links a {
+    font-size: 0.8rem; color: rgba(255,255,255,0.35);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+  .footer-right { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+  /* ─── REVEAL ANIMATIONS ───────────────────────────────────── */
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ─── RESPONSIVE ──────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 3rem; min-height: auto; }
+    .phone-frame { width: 220px; height: 440px; }
+    .problem-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .how { padding: 5rem 1.5rem; }
+    .verticals { grid-template-columns: 1fr; }
+    .features { padding: 5rem 1.5rem; }
+    .features-grid { grid-template-columns: 1fr 1fr; }
+    .findings { grid-template-columns: 1fr; }
+    .research { padding: 5rem 1.5rem; }
+    .research-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .safety-inner { grid-template-columns: 1fr; gap: 3rem; padding: 0; }
+    .safety { padding: 5rem 1.5rem; }
+    .cta-section { padding: 6rem 1.5rem; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .problem-strip { padding: 5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Po<span>Ho</span></a>
+  <ul class="nav-links">
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#safety">Safety</a></li>
+    <li><a href="https://poho.world">poho.world</a></li>
+  </ul>
+  <a href="#download" class="btn btn-primary">Download App</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Now available on iOS &amp; Android</div>
+    <h1 class="hero-headline reveal">
+      The world is<br>better with<br><em>someone<br>to share it.</em>
+    </h1>
+    <p class="hero-sub reveal">
+      PoHo is the social discovery app that bridges the gap between wanting to go out and actually going — by connecting you with someone to go with.
+    </p>
+    <div class="hero-ctas reveal">
+      <a href="#download" class="btn btn-primary">Get Started Free</a>
+      <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
+    </div>
+    <div class="hero-stat-row reveal">
+      <div class="hero-stat">
+        <strong>54%</strong>
+        <span>skipped plans — no one to go with</span>
+      </div>
+      <div class="hero-stat">
+        <strong>3</strong>
+        <span>ways to connect: events, dating, travel</span>
+      </div>
+      <div class="hero-stat">
+        <strong>Free</strong>
+        <span>core features, always</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal">
+    <div class="phone-blob"></div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="app-header">
+          <span class="app-logo-sm">Po<span>Ho</span></span>
+          <span style="font-size:0.75rem;color:rgba(255,255,255,0.3);">Reading, UK</span>
+        </div>
+        <div class="app-card">
+          <div class="card-title">🎨 Paint &amp; Sip Evening</div>
+          <div class="card-meta">Saturday · 7pm · 3 spots left</div>
+          <div class="avatars">
+            <div class="av">S</div>
+            <div class="av">M</div>
+            <div class="av" style="background:#4A90D9">+</div>
+          </div>
+          <div class="card-badge">2 want a companion</div>
+        </div>
+        <div class="app-card">
+          <div class="card-title">🏃 Sunday Morning Run</div>
+          <div class="card-meta">Sunday · 8am · Forbury Gardens</div>
+          <div class="card-badge">Join group</div>
+        </div>
+        <div class="app-card">
+          <div class="card-title">🌍 Visitor from Barcelona</div>
+          <div class="card-meta">Here 3 days · Looking to explore</div>
+          <div class="card-badge">Say hello</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM STRIP -->
+<section class="problem-strip" id="problem">
+  <div class="problem-inner">
+    <div>
+      <p class="problem-label">The research</p>
+      <h2 class="problem-headline reveal">
+        Finding things<br>to do is easy.<br><em>Going is<br>the hard part.</em>
+      </h2>
+      <p class="problem-body reveal">
+        We interviewed 39 people in Reading, UK about their social lives. Every single one said the same thing: TikTok, Instagram, and Google make it effortless to discover events and activities. The real barrier isn't information — it's participation.
+      </p>
+      <blockquote class="problem-quote reveal">
+        "If I want to go to a concert and no one else likes the artist and no one is free, usually I don't go."
+        <cite>— Interview participant, age 16–29</cite>
+      </blockquote>
+    </div>
+    <div class="problem-stats reveal">
+      <div class="pstat">
+        <div class="pstat-num">54%</div>
+        <div class="pstat-label">of people have skipped an activity because they had no one to go with</div>
+      </div>
+      <div class="pstat">
+        <div class="pstat-num">67%</div>
+        <div class="pstat-label">are uncomfortable or only conditionally comfortable at events with strangers</div>
+      </div>
+      <div class="pstat" style="grid-column: 1/-1;">
+        <div class="pstat-num" style="font-size:2rem;">No platform</div>
+        <div class="pstat-label">currently solves the companion problem. That's why we built PoHo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how-it-works">
+  <p class="section-label reveal">How it works</p>
+  <h2 class="section-headline reveal">Three ways to connect with the world around you</h2>
+  <p class="section-sub reveal">PoHo is built around action, not scrolling. Pick your entry point and find someone to share it with.</p>
+
+  <div class="verticals reveal">
+    <div class="vertical">
+      <div class="v-icon">🎉</div>
+      <div class="v-num">01 — Events</div>
+      <h3 class="v-title">Activities &amp; Events</h3>
+      <p class="v-body">Discover group dinners, sports sessions, cultural outings, and casual meetups in your city — then find the right person to attend with.</p>
+      <ul class="v-list">
+        <li>Browse events near you</li>
+        <li>Create your own activity</li>
+        <li>Find a companion to join you</li>
+        <li>Host approval keeps groups curated</li>
+      </ul>
+    </div>
+    <div class="vertical">
+      <div class="v-icon">💬</div>
+      <div class="v-num">02 — Social</div>
+      <h3 class="v-title">Social &amp; Dating</h3>
+      <p class="v-body">Forget swiping. PoHo puts the activity first and the chat second — so your first interaction is something you actually do together, not a message that goes nowhere.</p>
+      <ul class="v-list">
+        <li>Match through shared interests</li>
+        <li>Activity is the first meeting</li>
+        <li>No more chat-to-nowhere</li>
+        <li>Built for real connection</li>
+      </ul>
+    </div>
+    <div class="vertical">
+      <div class="v-icon">✈️</div>
+      <div class="v-num">03 — Travel</div>
+      <h3 class="v-title">Travel &amp; Exploration</h3>
+      <p class="v-body">New city. Don't know anyone. PoHo connects you with locals and other visitors so you can explore together — whether you're here for a weekend or a year.</p>
+      <ul class="v-list">
+        <li>Connect with locals instantly</li>
+        <li>Find fellow visitors nearby</li>
+        <li>Discover activities en route</li>
+        <li>Solo travel, shared experience</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH FINDINGS -->
+<section class="research">
+  <div class="research-inner">
+    <div class="research-header">
+      <div>
+        <p class="research-label">Real voices. Real research.</p>
+        <h2 class="research-headline reveal">What people told us</h2>
+      </div>
+      <p class="research-source reveal">39 discovery interviews<br>Reading, UK · 2024</p>
+    </div>
+    <div class="findings reveal">
+      <div class="finding">
+        <p class="finding-q">On making friends</p>
+        <blockquote class="finding-quote">
+          "Events are easy to find because of social media, but making friends is the hard part."
+          <cite>Participant III, age 16–29</cite>
+        </blockquote>
+      </div>
+      <div class="finding">
+        <p class="finding-q">On social media</p>
+        <blockquote class="finding-quote">
+          "You feel like you are connected, but you are just sitting in your room."
+          <cite>Participant V, age 16–29</cite>
+        </blockquote>
+      </div>
+      <div class="finding">
+        <p class="finding-q">On showing up alone</p>
+        <blockquote class="finding-quote">
+          "There is a strong social stigma against going out by yourself… and not having friends who want to do the same thing."
+          <cite>Participant XXI, age 16–29</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <p class="section-label reveal">Built for real life</p>
+  <h2 class="section-headline reveal">Everything you need to actually go</h2>
+  <p class="section-sub reveal">PoHo is a full-featured platform designed around the moment you decide to do something.</p>
+
+  <div class="features-grid reveal">
+    <div class="feat">
+      <div class="feat-icon">📍</div>
+      <h3 class="feat-title">Location Discovery</h3>
+      <p class="feat-body">See what's happening near you right now. Events, activities, and people — filtered by distance, interest, and availability.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">💬</div>
+      <h3 class="feat-title">Real-Time Messaging</h3>
+      <p class="feat-body">Chat instantly with event hosts and companions via our WebSocket-powered messaging — fast, reliable, and fully in-app.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">📞</div>
+      <h3 class="feat-title">Audio &amp; Video Calls</h3>
+      <p class="feat-body">Crystal-clear calls powered by Agora RTC, integrated natively with your phone's lock screen — just like a real call.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">✅</div>
+      <h3 class="feat-title">Identity Verification</h3>
+      <p class="feat-body">Profile verification tools so you can meet with confidence. You know who you're going with before you agree to go.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🎛️</div>
+      <h3 class="feat-title">Host Controls</h3>
+      <p class="feat-body">Create events with approval-based joining so you decide who comes. Your plans, your group, your experience.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🔔</div>
+      <h3 class="feat-title">Smart Notifications</h3>
+      <p class="feat-body">Get alerted before events happen — not after. Know what's on in time to actually go.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🔒</div>
+      <h3 class="feat-title">Privacy First</h3>
+      <p class="feat-body">UK GDPR compliant. Location data that never persists beyond your session. Your data is yours.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🆓</div>
+      <h3 class="feat-title">Free at the Core</h3>
+      <p class="feat-body">Browse events, join activities, message companions, and make plans — all free. Premium unlocks extra visibility and tools for organisers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section class="safety" id="safety">
+  <div class="safety-inner">
+    <div>
+      <p class="section-label reveal">Safety</p>
+      <div class="safety-big reveal">Because<br>real life<br>matters<br><em>most.</em></div>
+      <p class="safety-big-sub reveal">PoHo is built around real-world meetings. Safety isn't an afterthought — it's a design principle.</p>
+    </div>
+    <div>
+      <ul class="safety-commitments reveal">
+        <li>
+          <div class="sc-icon">🛡️</div>
+          <span><strong>Identity verification</strong> — optional but encouraged. Know who you're meeting before you meet them.</span>
+        </li>
+        <li>
+          <div class="sc-icon">🚩</div>
+          <span><strong>Report &amp; block tools</strong> — available on every profile, message, and event. One tap to flag, instant review by our team.</span>
+        </li>
+        <li>
+          <div class="sc-icon">⏱️</div>
+          <span><strong>24-hour response commitment</strong> — all reports of harmful content reviewed and actioned within 24 hours, per App Store guidelines.</span>
+        </li>
+        <li>
+          <div class="sc-icon">🔐</div>
+          <span><strong>Encrypted &amp; secure</strong> — Argon2 password hashing, TLS 1.2+ in transit, JWT authentication with token rotation.</span>
+        </li>
+        <li>
+          <div class="sc-icon">🧒</div>
+          <span><strong>Zero tolerance for CSAM</strong> — any instance reported immediately to the NCA and Internet Watch Foundation. No exceptions.</span>
+        </li>
+        <li>
+          <div class="sc-icon">📋</div>
+          <span><strong>UK GDPR compliant</strong> — your data is handled with transparency and purpose, under the Data Protection Act 2018.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="download">
+  <p class="cta-label reveal">Download PoHo</p>
+  <h2 class="cta-headline reveal">Stop missing out.<br><em>Go together.</em></h2>
+  <p class="cta-sub reveal">Free to download. Free to use. One tap away from something worth going to.</p>
+  <div class="cta-buttons reveal">
+    <a href="https://poho.world" class="btn-store">
+      <span class="btn-store-icon">🍎</span>
+      <span class="btn-store-text">
+        <span class="btn-store-sub">Download on the</span>
+        <span class="btn-store-main">App Store</span>
+      </span>
+    </a>
+    <a href="https://poho.world" class="btn-store">
+      <span class="btn-store-icon">▶</span>
+      <span class="btn-store-text">
+        <span class="btn-store-sub">Get it on</span>
+        <span class="btn-store-main">Google Play</span>
+      </span>
+    </a>
+    <a href="https://poho.world" class="btn btn-white" style="border-radius:14px;padding:0.85rem 1.75rem;">Visit poho.world</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://poho.world" class="footer-logo">Po<span>Ho</span></a>
+  <ul class="footer-links">
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms of Service</a></li>
+    <li><a href="#">Community Guidelines</a></li>
+    <li><a href="#">Data Deletion</a></li>
+    <li><a href="mailto:contact@poho.world">contact@poho.world</a></li>
+  </ul>
+  <p class="footer-right">© 2025 PoHo Mobile. All rights reserved.</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
