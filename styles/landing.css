@@ -1,0 +1,315 @@
+/* landing.css - Premium Styles for PoHo Homepage */
+
+:root {
+  --poho-bg: #09090b;
+  --poho-surface: rgba(255, 255, 255, 0.03);
+  --poho-surface-hover: rgba(255, 255, 255, 0.06);
+  --poho-border: rgba(255, 255, 255, 0.08);
+  --poho-accent: #5e5ce6;
+  --poho-accent-glow: rgba(94, 92, 230, 0.4);
+  --poho-text: #f8f8f8;
+  --poho-text-muted: #a1a1aa;
+}
+
+body {
+  background-color: var(--poho-bg);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(94, 92, 230, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(177, 75, 244, 0.08), transparent 25%);
+  color: var(--poho-text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 var(--poho-accent-glow); }
+  70% { box-shadow: 0 0 20px 10px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Container & Grid */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header/Nav */
+.navbar {
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.nav-brand {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #fff, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero Section */
+.hero {
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(94, 92, 230, 0.15);
+  color: #8b8aff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.hero-title {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #fff 30%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: var(--poho-text-muted);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.app-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.btn-app {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  color: #000;
+  padding: 14px 24px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-app:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+.btn-app.secondary {
+  background: var(--poho-surface);
+  color: #fff;
+  border: 1px solid var(--poho-border);
+  backdrop-filter: blur(10px);
+}
+
+.btn-app.secondary:hover {
+  background: var(--poho-surface-hover);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn-app svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Visual Mockup Area */
+.hero-mockup {
+  margin-top: 80px;
+  position: relative;
+  animation: fadeInUp 1s ease-out 0.6s both, float 6s ease-in-out infinite;
+}
+
+.mockup-frame {
+  width: 320px;
+  height: 650px;
+  margin: 0 auto;
+  background: #000;
+  border: 12px solid #1a1a1c;
+  border-radius: 48px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 80px var(--poho-accent-glow);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockup-inner {
+  text-align: center;
+  padding: 24px;
+}
+
+.mockup-logo {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.mockup-ui-line {
+  height: 8px;
+  background: #333;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.mockup-ui-circle {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--poho-accent), #b14bf4);
+  border-radius: 50%;
+  margin: 0 auto 32px;
+}
+
+/* Features Section */
+.features {
+  padding: 120px 0;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 64px;
+  letter-spacing: -1px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--poho-surface);
+  border: 1px solid var(--poho-border);
+  border-radius: 24px;
+  padding: 40px 32px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: var(--poho-surface-hover);
+  border-color: rgba(94, 92, 230, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(94, 92, 230, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--poho-accent);
+}
+
+.feature-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.feature-desc {
+  color: var(--poho-text-muted);
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--poho-border);
+  padding: 60px 0 40px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: var(--poho-text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--poho-text-muted);
+  font-size: 14px;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .hero-title { font-size: 56px; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .hero-title { font-size: 40px; }
+  .app-buttons { flex-direction: column; }
+  .features-grid { grid-template-columns: 1fr; }
+  .footer-content { flex-direction: column; text-align: center; }
+}
