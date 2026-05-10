@@ -1,8 +1,64 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function Home() {
+  const cursorDotRef = useRef(null);
+  const cursorRingRef = useRef(null);
+
+  useEffect(() => {
+    const dot = cursorDotRef.current;
+    const ring = cursorRingRef.current;
+    if (!dot || !ring) return;
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    const onMouseMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+    };
+
+    const animate = () => {
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      ring.style.transform = `translate(${ringX - 20}px, ${ringY - 20}px)`;
+      requestAnimationFrame(animate);
+    };
+
+    const onMouseEnterLink = () => {
+      ring.style.width = '56px';
+      ring.style.height = '56px';
+      ring.style.borderColor = 'var(--poho-accent)';
+      ring.style.background = 'rgba(239, 68, 68, 0.08)';
+    };
+
+    const onMouseLeaveLink = () => {
+      ring.style.width = '40px';
+      ring.style.height = '40px';
+      ring.style.borderColor = 'rgba(239, 68, 68, 0.4)';
+      ring.style.background = 'transparent';
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    animate();
+
+    const links = document.querySelectorAll('a, button, .btn-app, .feature-card, .vertical, .finding');
+    links.forEach(el => {
+      el.addEventListener('mouseenter', onMouseEnterLink);
+      el.addEventListener('mouseleave', onMouseLeaveLink);
+    });
+
+    return () => {
+      document.removeEventListener('mousemove', onMouseMove);
+      links.forEach(el => {
+        el.removeEventListener('mouseenter', onMouseEnterLink);
+        el.removeEventListener('mouseleave', onMouseLeaveLink);
+      });
+    };
+  }, []);
+
   useEffect(() => {
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -19,6 +75,10 @@ export default function Home() {
 
   return (
     <>
+      {/* Custom Cursor */}
+      <div ref={cursorDotRef} className="cursor-dot" />
+      <div ref={cursorRingRef} className="cursor-ring" />
+
       <Head>
         <title>PoHo — Go Together</title>
         <meta name="description" content="PoHo is the social discovery app that bridges the gap between wanting to go out and actually going — by connecting you with someone to go with." />

@@ -2,6 +2,38 @@
    landing.css — PoHo Landing Page · Black & Red Theme
    ══════════════════════════════════════════════════════════ */
 
+/* ─── CUSTOM CURSOR ──────────────────────────────────────── */
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  background: var(--poho-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.3s;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 40px; height: 40px;
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
+  background: transparent;
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+@media (hover: hover) {
+  * { cursor: none !important; }
+}
+
 :root {
   --poho-bg: #000000;
   --poho-surface: rgba(255, 255, 255, 0.03);
