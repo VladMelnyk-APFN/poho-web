@@ -2,36 +2,47 @@ import Head from 'next/head';
 import React from 'react';
 
 export default function LegalDoc({ title, text }) {
-  // Parse the text into structured React elements
   const parseText = (content) => {
     if (!content) return null;
-    const blocks = content.split(/\n\s*\n/);
     
-    return blocks.map((block, index) => {
-      const trimmed = block.trim();
-      if (!trimmed) return null;
-      
-      // If it starts with a number followed by a dot, it's a heading
-      if (/^\d+\.\s/.test(trimmed)) {
-        return <h2 key={index}>{trimmed}</h2>;
+    let rawBlocks = content.split(/\n\s*\n/);
+    rawBlocks = rawBlocks.map(b => b.trim()).filter(b => b);
+
+    const mergedBlocks = [];
+    for (let i = 0; i < rawBlocks.length; i++) {
+      let current = rawBlocks[i];
+      while (i < rawBlocks.length - 1) {
+        const next = rawBlocks[i + 1];
+        if (/[.:;!?]\s*$/.test(current)) {
+          break;
+        }
+        if (/^\d+\.\s/.test(next) || /^\d+\.\d+\s/.test(next) || (next === next.toUpperCase() && next.length > 5 && next.length < 60)) {
+          break;
+        }
+        if (/^\d+\.\s/.test(current) || /^\d+\.\d+\s/.test(current) || (current === current.toUpperCase() && current.length > 5 && current.length < 60)) {
+           break;
+        }
+        current = current + " " + next;
+        i++;
       }
-      
-      // If it's short and all caps (with some exceptions), it's a subtitle/heading
-      if (trimmed === trimmed.toUpperCase() && trimmed.length > 5 && trimmed.length < 60 && !trimmed.includes('HTTP')) {
-        return <h3 key={index}>{trimmed}</h3>;
+      mergedBlocks.push(current);
+    }
+    
+    return mergedBlocks.map((block, index) => {
+      if (/^\d+\.\s/.test(block) || /^\d+\.\d+\s/.test(block)) {
+        return <h2 key={index}>{block}</h2>;
       }
-      
-      // If it starts with a bullet point, it's a list item
-      if (/^[•-]\s/.test(trimmed)) {
+      if (block === block.toUpperCase() && block.length > 4 && block.length < 60 && !block.includes('HTTP')) {
+        return <h3 key={index}>{block}</h3>;
+      }
+      if (/^[•-]\s/.test(block)) {
         return (
           <ul key={index}>
-            <li>{trimmed.substring(2)}</li>
+            <li>{block.substring(2)}</li>
           </ul>
         );
       }
-      
-      // Otherwise, it's a paragraph
-      return <p key={index}>{trimmed}</p>;
+      return <p key={index}>{block}</p>;
     });
   };
 
